@@ -18,3 +18,10 @@ Then just access http://localhost:30000 on your browser.
 
 You will see an angular app with sample usage of responsive design,
 and angular best practices.
+
+Tested on
+IE9
+Chrome 43.0.2357.130 
+Safari 5.1
+Firefox 38.0
+Opera 30
