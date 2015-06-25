@@ -11,8 +11,11 @@ To start the project paste on the terminal
 ```
 vagrant up #wait a while
 vagrant ssh
+sudo npm install -g bower
+cd /opt/src/public && bower install #the first time you are asked to send data
 cd /opt/src/ && gulp
 ```
+TODO: install bower and bower files via the vagrant config
 
 Then just access http://localhost:30000 on your browser.
 
