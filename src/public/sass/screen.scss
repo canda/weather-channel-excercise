@@ -1,0 +1,63 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+//libraries
+@import "breakpoint";
+@import "compass/css3/animation";
+
+//partials
+@import "screen_sizes";
+@import "gradient";
+
+
+/**
+ * Display sections horizontally aligned on desktop
+ */
+section {
+  @include breakpoint($laptop){
+    float: left;
+    width: (100% / 3);
+  }
+}
+
+/**
+ * Gradient background for sections
+ */
+section {
+  background-size: 200% 200%;
+  background-position: 50% 50%;
+  @include gradient(white, red);
+}
+#sidebar {
+  @include gradient(blue, yellow);
+}
+
+/**
+ * animate section backgrounds
+ */
+@include keyframes(gradientAnimate){
+    0%{background-position: 50% 50%}
+    25%{background-position: 100% 100%}
+    50%{background-position: 50% 50%}
+    75%{background-position: 0% 0%}
+    100%{background-position: 50% 50%}
+  };
+.animatedBackground {
+  @include animation(gradientAnimate 3s infinite linear);
+}
+
+
+//This is the alternative to use <picture> and a pollyfill.
+//It is simpler, but it loads both images on retina display browsers
+//
+// /**
+//  * Change image when on retina display
+//  */
+// #main img {
+//   max-width: 100%;
+//   @include breakpoint($retina){
+//     content:url("http://dsx.weather.com/util/image/w/68a62f4e-122e-4c72-91b2-ec9f5024e031.jpg?api=7db9fe61-7414-47b5-9871-e17d87b8b6a0&h=598&w=640&v=at");
+//   }
+// }

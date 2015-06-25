@@ -1,0 +1,124 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/**
+ * Breakpoints with string names
+ * There is no defined limit between large landscape tablets and small laptops
+ * We should focus on screen size, not device types for responsive design
+ */
+/**
+ * cross browser gradient mixin
+ * @param  {string} $fromColor initial color
+ * @param  {string} $toColor   finishing color
+ */
+/**
+ * Display sections horizontally aligned on desktop
+ */
+@media (min-width: 992px) {
+  section {
+    float: left;
+    width: 33.33333%;
+  }
+}
+
+/**
+ * Gradient background for sections
+ */
+section {
+  background-size: 200% 200%;
+  background-position: 50% 50%;
+  background-color: red;
+  /* Fallback Color */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(red));
+  /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, white, red);
+  /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image: -moz-linear-gradient(top, white, red);
+  /* FF3.6 */
+  background-image: -ms-linear-gradient(top, white, red);
+  /* IE10 */
+  background-image: -o-linear-gradient(top, white, red);
+  /* Opera 11.10+ */
+  background-image: linear-gradient(top, white, red);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='white', EndColorStr='red');
+  /* IE9 support */
+}
+
+#sidebar {
+  background-color: yellow;
+  /* Fallback Color */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(blue), to(yellow));
+  /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, blue, yellow);
+  /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image: -moz-linear-gradient(top, blue, yellow);
+  /* FF3.6 */
+  background-image: -ms-linear-gradient(top, blue, yellow);
+  /* IE10 */
+  background-image: -o-linear-gradient(top, blue, yellow);
+  /* Opera 11.10+ */
+  background-image: linear-gradient(top, blue, yellow);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='blue', EndColorStr='yellow');
+  /* IE9 support */
+}
+
+/**
+ * animate section backgrounds
+ */
+@-moz-keyframes gradientAnimate {
+  0% {
+    background-position: 50% 50%;
+  }
+  25% {
+    background-position: 100% 100%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  75% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 50% 50%;
+  }
+}
+@-webkit-keyframes gradientAnimate {
+  0% {
+    background-position: 50% 50%;
+  }
+  25% {
+    background-position: 100% 100%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  75% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 50% 50%;
+  }
+}
+@keyframes gradientAnimate {
+  0% {
+    background-position: 50% 50%;
+  }
+  25% {
+    background-position: 100% 100%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  75% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 50% 50%;
+  }
+}
+.animatedBackground {
+  -moz-animation: gradientAnimate 3s infinite linear;
+  -webkit-animation: gradientAnimate 3s infinite linear;
+  animation: gradientAnimate 3s infinite linear;
+}
